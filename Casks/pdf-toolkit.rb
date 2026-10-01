@@ -1,6 +1,6 @@
 cask "pdf-toolkit" do
-  version "1.0"
-  sha256 "f1ecc58725eba94a166bd6fcedbd4c8e87fb9473e126cf41a714cc17af8863a8"
+  version "1.1"
+  sha256 "74bf91b59ff388cd4c5dfe341824580c061bd54248b4416316a649086a52c2f3"
 
   url "https://github.com/Poetic-PiXie/pdf-toolkit/releases/download/v#{version}/PDF_Toolkit.dmg"
   name "PDF Toolkit"
