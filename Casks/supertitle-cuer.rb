@@ -1,9 +1,9 @@
 cask "supertitle-cuer" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.3.1"
-  sha256 arm:   "640ea231f59a396cbde62d7ea5b59c866a13e61f5a98ddc204b79d544aad73d5",
-         intel: "85d06ffb9242e20ce0640a6585729f38e947fb6b6f6a9e5c90a42225cc40833b"
+  version "1.3.2"
+  sha256 arm:   "232bb5bd1249e020585a1ee020c7af48aa7a4e83aa87ae2ff42ce57a87e94ada",
+         intel: "a9f813489fd32980686be4ca67fc8c0c54412556c63a2246cacd9c9ed621a1cf"
 
   url "https://github.com/Poetic-PiXie/supertitle-cuer/releases/download/v#{version}/Supertitle_Cuer-#{version}-#{arch}.dmg"
   name "Supertitle Cuer"
