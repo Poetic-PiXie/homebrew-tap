@@ -21,6 +21,10 @@ cask "supertitle-cuer" do
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Supertitle Cuer.app"]
   end
 
+  # STQ keeps running in the Dock when its window is closed, so quit it before an upgrade
+  # or uninstall: the new version must never start from a half-replaced app.
+  uninstall quit: "com.poeticpixie.supertitlecuer"
+
   zap trash: [
     "~/Library/Application Support/Supertitle Cuer",
     "~/Library/Preferences/com.poeticpixie.supertitlecuer.plist",
