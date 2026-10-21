@@ -1,24 +1,24 @@
 cask "supertitle-cuer" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.8.0"
-  sha256 arm:   "085b5083de651aae1844bacfdc47368205ccb0ea3d11043156d68ab10a2cef80",
-         intel: "38f44d229407c2094b92155408958c962c0c778a084fb7892ddab80a13ad1844"
+  version "1.0.0"
+  sha256 arm:   "7f19464676eafb0338d0bbaff79fb948adc5d1c6a04a1c7bd3d4c8189c701e6b",
+         intel: "65cd48749658abc41ade342b9b724761d79abe80498841b67fd2a7ac7299ec88"
 
   url "https://github.com/Poetic-PiXie/supertitle-cuer/releases/download/v#{version}/Supertitle_Cuer-#{version}-#{arch}.dmg"
   name "Supertitle Cuer"
   desc "Cue opera supertitles from the score and run them to a projector"
   homepage "https://github.com/Poetic-PiXie/supertitle-cuer"
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Supertitle Cuer.app"
 
   # The app has no Apple Developer ID signature; clear the download quarantine
   # so macOS lets it open (runs after every install and upgrade).
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Supertitle Cuer.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Supertitle Cuer.app"]
   end
 
   # STQ keeps running in the Dock when its window is closed, so quit it before an upgrade
